@@ -656,6 +656,10 @@ snippet desc
 	describe ${1:`substitute(substitute(vim_snippets#Filename(), '_spec$', '', ''), '\(_\|^\)\(.\)', '\u\2', 'g')`} do
 		${0}
 	end
+snippet feat
+	feature '${1}' do
+		${0}
+	end
 snippet descm
 	describe '${1:#method}' do
 		${0:pending 'Not implemented'}
@@ -668,6 +672,10 @@ snippet bef
 	before :${1:each} do
 		${0}
 	end
+snippet bac
+	background :${1:each} do
+		${0}
+	end
 snippet aft
 	after :${1:each} do
 		${0}
@@ -676,6 +684,10 @@ snippet let
 	let(:${1:object}) { ${0} }
 snippet let!
 	let!(:${1:object}) { ${0} }
+snippet giv
+	given(:${1:object}) { ${0} }
+snippet giv!
+	given!(:${1:object}) { ${0} }
 snippet subj
 	subject { ${0} }
 snippet s.
@@ -694,6 +706,10 @@ snippet ibl
 	it_behaves_like ${0:'shared examples name'}
 snippet it
 	it '${1:spec_name}' do
+		${0}
+	end
+snippet sce
+	scenario '${1:spec_name}' do
 		${0}
 	end
 snippet its
