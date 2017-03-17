@@ -663,11 +663,16 @@ snippet marki "$this->markTestIncomplete()"
 	$this->markTestIncomplete(${1});
 snippet marks "$this->markTestSkipped()"
 	$this->markTestSkipped(${1});
-snippet mockbuilder
-	$stub = $this->getMockBuilder(${0:String $originalClassName})
+snippet mockbuilder "$this->getMockBuilder(ClassName)"
+	$${1:mock} = $this->getMockBuilder(${2:ClassName})
+		->setMockClassName(${3:MockClassName})
+		->setConstructorArgs(${4:array()})
 		->disableOriginalConstructor()
+		->disableOriginalClone()
+		->disableAutoload()
+		->setMethods(${5:array()})
 		->getMock();
-	$0
+	${0}
 # end of phpunit snippets
 snippet te "throw new Exception()"
 	throw new ${1:Exception}("${2:Error Processing Request}");
